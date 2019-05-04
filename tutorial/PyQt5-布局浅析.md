@@ -10,7 +10,6 @@ thumbnail: /img/praiseMePlease.png
 
 【GitHub项目地址】：https://github.com/luochang212/PyQt5_Demo
 
-
 ### 创建第一个窗口
 
 一般来说，桌面应用都以窗口(window)形式呈现。因此，要搭建桌面应用，首先要创建窗口。
