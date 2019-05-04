@@ -352,6 +352,6 @@ if __name__ == '__main__':
 
 ```
 
-![praise me please](img/praiseMePlease.png)
-
 这是我做的夸夸机器人，给它取的英文名叫praise me please. 输入姓名、性别和你要它夸你啥，然后点praise me, 他就会开始随机夸你。哈哈哈我觉得好智障啊，但我喜欢！
+
+![praise me please](img/praiseMePlease.png)
