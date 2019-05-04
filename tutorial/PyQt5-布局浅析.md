@@ -42,7 +42,7 @@ if __name__ == '__main__':
 
 ```
 
-![blank window](/img/blankWindow.png)
+![blank window](img/blankWindow.png)
 
 这段代码仅仅设置了窗口的标题和大小。下一步，我们要往这个空的窗口里添加部件(widget). 为了规范性，我们在Window类里新建一个函数initUI, 然后在initUI里为窗口添加部件。
 
@@ -83,7 +83,7 @@ if __name__ == '__main__':
     sys.exit(app.exec_())
 
 ```
-![first widget](/img/firstWidget.png)
+![first widget](img/firstWidget.png)
 
 但是我们发现，如果没有添加任何布局，我们创建的按钮(self.btn), 永远被放置在窗口的左上角。即使我们可以用move函数移动它，排版作用也非常有限。所以我们才需要布局工具。
 
@@ -114,7 +114,7 @@ def initUI(self):
 
 ```
 
-![first layout](/img/firstLayout.png)
+![first layout](img/firstLayout.png)
 
 可以看出，创建一个布局只需要三步。
 
@@ -168,7 +168,7 @@ def initUI(self):
 
 ```
 
-![layout stretch](/img/layoutStretch.png)
+![layout stretch](img/layoutStretch.png)
 
 上述代码在原基础上只加了两行。
 
@@ -352,6 +352,6 @@ if __name__ == '__main__':
 
 ```
 
-![praise me please](/img/praiseMePlease.png)
+![praise me please](img/praiseMePlease.png)
 
 这是我做的夸夸机器人，给它取的英文名叫praise me please. 输入姓名、性别和你要它夸你啥，然后点praise me, 他就会开始随机夸你。哈哈哈我觉得好智障啊，但我喜欢！
