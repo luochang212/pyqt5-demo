@@ -6,9 +6,10 @@ tags: PyCharm
 thumbnail: /img/praiseMePlease.png
 ---
 
-> PyQt5是Python环境下用来开发UI界面的一个包。它容易上手，对初学者友好，并且拥有丰富的函数库，可以实现大部分桌面应用的开发需求。而且它还支持QSS语言，能够对界面风格做个性化调整。总体来说，PyQt5是一款开发效率极高的UI框架。这篇文章从零开始，教会你搭建第一个属于自己的桌面应用。
+> PyQt5是Python环境下用来开发UI界面的一个包。它容易上手，对初学者友好，并且拥有丰富的函数库，可以实现大部分桌面应用的开发需求，且支持QSS语言，能够对界面风格做个性化调整。总体来说，PyQt5是一款开发效率极高的UI框架。这篇文章从零开始，教你搭建一个属于自己的桌面应用。
 
-【GitHub项目地址】：https://github.com/luochang212/weibo_analysis
+【GitHub项目地址】：https://github.com/luochang212/PyQt5_Demo
+
 
 ### 创建第一个窗口
 
@@ -42,7 +43,7 @@ if __name__ == '__main__':
 
 ```
 
-![blank window](/img/blankWindow.png)
+![blank window](img/blankWindow.png)
 
 这段代码仅仅设置了窗口的标题和大小。下一步，我们要往这个空的窗口里添加部件(widget). 为了规范性，我们在Window类里新建一个函数initUI, 然后在initUI里为窗口添加部件。
 
@@ -83,17 +84,17 @@ if __name__ == '__main__':
     sys.exit(app.exec_())
 
 ```
-![first widget](/img/firstWidget.png)
+![first widget](img/firstWidget.png)
 
-但是我们发现，如果没有添加任何布局，我们创建的按钮(self.btn), 永远被放置在窗口的左上角。即使我们可以用move函数移动它，排版作用也非常有限。所以我们才需要布局工具。
+但是我们发现，如果没有添加任何布局，我们创建的按钮(self.btn), 永远被放置在窗口的左上角。即使我们可以用move函数移动它，排版作用也非常有限。因此我们需要为窗口添加布局。
 
 ### 为窗口添加布局
 
-PyQt5的布局(layout)有很多，比较常见的有QBoxLayout, QGridLayout, QFormLayout. 但我要说，后两种布局都有其局限性，一般只适用于特殊场景，但QBoxLayout却是一招吃遍天下。大部分情况下，QBoxLayout都可以替代其他两种布局方式。
+PyQt5的布局(layout)有很多，比较常见的有QBoxLayout, QGridLayout, QFormLayout. 但我要说，后两种布局都有其局限性，一般只适用于特殊场景，但QBoxLayout却是一招打遍天下无敌手。大部分情况下，QBoxLayout都可以替代其他两种布局方式。
 
-QBoxLayout的布局思想是：通过定义部件之间的上下左右关系来定义空间结构。因此它有两个函数QHBoxLayout和QVBoxLayout, 函数名里的H和V分别对应英文单词horizontal和vertical, 代表水平和竖直。
+QBoxLayout的布局思想是：通过定义部件之间的上下左右关系来定义空间结构。因此它有两个函数QHBoxLayout和QVBoxLayout, 函数名里的H和V分别对应英文单词horizontal和vertical, 代表水平和竖直。所以，QHBoxLayout代表横向排版，QVBoxLayout表示纵向排版。
 
-下面这段代码是一个QHBoxLayout的例子。为了简洁，重复的代码就不放了，这里只贴initUI部分。
+下面这段代码是一个QHBoxLayout的例子。为了简洁，重复的代码就不放了，这里只贴initUI的部分。
 
 ```python
 def initUI(self):
@@ -114,7 +115,7 @@ def initUI(self):
 
 ```
 
-![first layout](/img/firstLayout.png)
+![first layout](img/firstLayout.png)
 
 可以看出，创建一个布局只需要三步。
 
@@ -122,7 +123,7 @@ def initUI(self):
 * 创建布局(layout), 并将部件依次添加到布局中。
 * 创建中心部件(central widget), 并为中心部件添加布局。
 
-要理解这三步，首先要理解什么是中心部件(central widget)。中心部件和按钮部件(QPushButton)虽然都被称作部件(widget), 但它俩是完全不同的。与按钮部件相比，中心部件没有固定的功能和形态，它就像画布，本身是空白的，因此你无法直接在窗口中看到它。它的作用在于通过调整它的布局(setLayout)来对其他部件排版。
+要理解这三步，首先要理解什么是中心部件(central widget)。中心部件和按钮部件(QPushButton)虽然都被称作部件(widget), 但它俩是完全不同的。与按钮部件相比，中心部件没有固定的功能和形态，它就像画布，本身是空白的，因此你无法直接在窗口中看到它。它的作用在于通过调整它的布局属性(setLayout)来对其他部件排版。
 
 中心部件，布局和部件之间的逻辑关系如下。
 
@@ -168,15 +169,15 @@ def initUI(self):
 
 ```
 
-![layout stretch](/img/layoutStretch.png)
+![layout stretch](img/layoutStretch.png)
 
-上述代码在原基础上只加了两行。
+上述代码只在原基础上加了两行。
 
 * `main_layout.setStretch(0, 1)`表示0号部件的拉伸设置为1
 
 * `main_layout.setStretch(1, 3)`表示1号部件的拉伸设置为3
 
-因此，两个部件之间的比例关系就是1：3。
+由此，两个部件之间的比例关系被定义为1：3。
 
 ### 布局进阶之部件迭代
 
@@ -207,7 +208,9 @@ self.setCentralWidget(main_widget)
 
 ### 制作一个布局灵活的UI界面
 
-学会了以上这些方法，再配合一些奇技淫巧，比如加空白的占位部件addStretch(int), 基本上可以随心所欲地控制布局了。 
+学会了以上这些方法，再配合一些奇技淫巧，比如加空白的占位部件addStretch(int), 你基本上就可以随心所欲地控制布局了。 
+
+下面这段代码制作了一个有意思的桌面应用：夸夸机器人。
 
 ```python
 from PyQt5.QtWidgets import *
@@ -352,6 +355,6 @@ if __name__ == '__main__':
 
 ```
 
-![praise me please](/img/praiseMePlease.png)
-
 这是我做的夸夸机器人，给它取的英文名叫praise me please. 输入姓名、性别和你要它夸你啥，然后点praise me, 他就会开始随机夸你。哈哈哈我觉得好智障啊，但我喜欢！
+
+![praise me please](img/praiseMePlease.png)
