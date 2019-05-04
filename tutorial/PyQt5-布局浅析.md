@@ -8,7 +8,7 @@ thumbnail: /img/praiseMePlease.png
 
 > PyQt5是Python环境下用来开发UI界面的一个包。它容易上手，对初学者友好，并且拥有丰富的函数库，可以实现大部分桌面应用的开发需求。而且它还支持QSS语言，能够对界面风格做个性化调整。总体来说，PyQt5是一款开发效率极高的UI框架。这篇文章从零开始，教会你搭建第一个属于自己的桌面应用。
 
-【GitHub项目地址】：https://github.com/luochang212/weibo_analysis
+【GitHub项目地址】：https://github.com/luochang212/PyQt5_Demo
 
 ### 创建第一个窗口
 
