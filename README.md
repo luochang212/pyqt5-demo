@@ -1,4 +1,4 @@
-# PyQt5_demo
+# pyqt5-demo
 
 PyQt5布局浅析的示例代码。
 
