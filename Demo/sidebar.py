@@ -1,6 +1,4 @@
 from PyQt5.QtWidgets import *
-from PyQt5.QtCore import *
-from PyQt5.QtGui import *
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.backends.backend_qt5agg import NavigationToolbar2QT as NavigationToolbar
 import matplotlib.pyplot as plt
@@ -20,10 +18,12 @@ class Window(QMainWindow):
         self.height = int(0.618 * self.Width)
         self.resize(self.Width, self.height)
 
+        # add all widgets
         self.btn_1 = QPushButton('Text', self)
         self.btn_2 = QPushButton('Show', self)
         self.btn_3 = QPushButton('Plot', self)
         self.btn_4 = QPushButton('copyright', self)
+
         self.btn_1.setObjectName('left_button')
         self.btn_2.setObjectName('left_button')
         self.btn_3.setObjectName('left_button')
@@ -44,14 +44,16 @@ class Window(QMainWindow):
 
         self.showText = QLabel('')
 
-        self.strList = np.array([])
-
         self.figure = plt.figure()
 
         self.canvas = FigureCanvas(self.figure)
 
         self.toolbar = NavigationToolbar(self.canvas, self)
 
+        # initialize variable
+        self.strList = np.array([])
+
+        # add tabs
         self.tab1 = self.ui1()
         self.tab2 = self.ui2()
         self.tab3 = self.ui3()
