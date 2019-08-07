@@ -13,8 +13,8 @@ class Window(QMainWindow):
         self.Width = 800
         self.height = int(0.618 * self.Width)
         self.resize(self.Width, self.height)
-		
-		# add all widgets
+
+        # add all widgets
         self.btn_1 = QPushButton('1', self)
         self.btn_2 = QPushButton('2', self)
         self.btn_3 = QPushButton('3', self)
@@ -83,8 +83,8 @@ class Window(QMainWindow):
 
     def button4(self):
         self.right_widget.setCurrentIndex(3)
-	
-	# ----------------- 
+
+    # -----------------
     # pages
 
     def ui1(self):
